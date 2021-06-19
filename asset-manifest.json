@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/rene-head/static/css/main.92e13111.chunk.css",
-    "main.js": "/rene-head/static/js/main.96e085f1.chunk.js",
-    "main.js.map": "/rene-head/static/js/main.96e085f1.chunk.js.map",
+    "main.css": "/rene-head/static/css/main.6f2507b1.chunk.css",
+    "main.js": "/rene-head/static/js/main.0af43a5a.chunk.js",
+    "main.js.map": "/rene-head/static/js/main.0af43a5a.chunk.js.map",
     "runtime-main.js": "/rene-head/static/js/runtime-main.f1930267.js",
     "runtime-main.js.map": "/rene-head/static/js/runtime-main.f1930267.js.map",
     "static/js/2.bd03b113.chunk.js": "/rene-head/static/js/2.bd03b113.chunk.js",
     "static/js/2.bd03b113.chunk.js.map": "/rene-head/static/js/2.bd03b113.chunk.js.map",
     "index.html": "/rene-head/index.html",
-    "static/css/main.92e13111.chunk.css.map": "/rene-head/static/css/main.92e13111.chunk.css.map",
+    "static/css/main.6f2507b1.chunk.css.map": "/rene-head/static/css/main.6f2507b1.chunk.css.map",
     "static/js/2.bd03b113.chunk.js.LICENSE.txt": "/rene-head/static/js/2.bd03b113.chunk.js.LICENSE.txt",
     "static/media/1.95522ba4.png": "/rene-head/static/media/1.95522ba4.png",
     "static/media/2.acab4988.png": "/rene-head/static/media/2.acab4988.png",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.f1930267.js",
     "static/js/2.bd03b113.chunk.js",
-    "static/css/main.92e13111.chunk.css",
-    "static/js/main.96e085f1.chunk.js"
+    "static/css/main.6f2507b1.chunk.css",
+    "static/js/main.0af43a5a.chunk.js"
   ]
 }
