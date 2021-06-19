@@ -37,8 +37,10 @@ function App() {
           var average = values / length;
 
           if(average > 100){
-            twoRef.current.style.width = `${Math.round(average - 80)}%`;
-            console.log(Math.round(average));  
+              twoRef.current.style.width = `${Math.round(average - 80)}%`;
+              console.log(Math.round(average));  
+          } else {
+            twoRef.current.style.width = `10%`;
           }
           requestAnimationFrame(play);
         }
