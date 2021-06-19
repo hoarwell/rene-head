@@ -8,11 +8,37 @@ import './App.css';
 
 function App() {
   const [detecting, setDetecting] = useState(false);
-
+  const [support, setSupport] = useState("");
   const twoRef = useRef();
 
-  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-  navigator.getUserMedia({ video : false, audio : true }, callback, console.log);
+  let countNum;
+
+  navigator.getUserMedia = ( navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia );
+
+  const askSupport = () => {
+    if (navigator && navigator.mediaDevices && navigator.mediaDevices.getUserMedia) { 
+      setSupport(true);
+      console.log('support')
+    } else {
+      setSupport(false);
+      console.log("not support")
+    }
+  }
+
+  let constraints = { 
+      video : false, 
+      audio : true 
+  }
+
+  if(support){
+    let promise = navigator.mediaDevices.getUserMedia(constraints);
+    promise.then(callback).catch(err => console.log(err));
+  } else {
+    alert('지금 쓰고 계시는 거 마이크 안먹힙니다')
+  }
 
   function callback(stream) {
       let ctx = new AudioContext();
@@ -20,6 +46,7 @@ function App() {
       let analyser = ctx.createAnalyser();
       
       mic.connect(analyser);
+      countNum = 0;
 
       if(detecting){
         function play() {
@@ -38,9 +65,11 @@ function App() {
 
           if(average > 100){
               twoRef.current.style.width = `${Math.round(average - 80)}%`;
-              console.log(Math.round(average));  
+              countNum = countNum + 1;
+              console.log(Math.round(average), countNum);
           } else {
             twoRef.current.style.width = `10%`;
+            countNum = 0;
           }
           requestAnimationFrame(play);
         }
@@ -54,6 +83,7 @@ function App() {
     } else {
       setDetecting(false);
     }
+    askSupport();
   }, [])
 
   return (
